@@ -1,0 +1,69 @@
+#README.md
+
+
+#Author: David Asare Kumi 
+#Course: Getting and Cleaning Data Project
+
+#Objectives of the Project
+1.A tidy data set
+2.A link to a Github repository with your script for performing the analysis
+3.A code book that describes the variables, the data, and any transformations 
+or work that you performed to clean up the data called CodeBook.md. 
+4.You should also include a README.md in the repo with your scripts. 
+This repo explains how all of the scripts work and how they are connected.
+
+#Review of the project:  
+The project has been extremely useful as it teaches students how to download files, unzip,
+clean, and organize a messy file to a more tidy data file.
+In addition, it teaches students how to merge datasets and use the pipe operator.
+
+
+#Requirements
+This project required the installation and loading of some packages and files
+to get the work done. Some of the packages include data.table,dplyr etc.
+Files include the file downloaded from the web for the analysis and other messy files that 
+had to be transformed into a more tidy dataset for analysis.
+
+
+#Script list
+1.library(data.table):This loads the data.table package.
+2.library(dplyr):This loads the dplyr package.
+3.path:The working directory where the actual work is done.
+4.fileurl:The url downloaded for the project. 
+5.unzip:This unzips the zipped file to grant access.
+6.activityLabels:loads the activity labels in the file.
+7.features:loads the features in the file.
+8.featuresWanted:extracts the features wanted from the file using grep()function.
+9.measurements:extracts the measurements wanted from the file using gsub()function.
+10.train:load the train datasets.
+11.trainActivities:load the train activities from the train datasets.
+12.trainSubjects:load the train subjects from the train datasets.
+13.cbind:column binds the trainSubjects,trainActivities and train.
+14.test:loads the test datasets.
+15.testActivities:load the test activities from the datasets.
+16.testSubjects:loads the test subjects from the datasets.
+17.cbind:column binds the testSubjects,testActivities and test.
+18.mergedDT:merges the train and test datasets.
+19:write.table: exports dataframe mergedDT from R to excel in a csv
+(comma separated value)format. The excel data is saved as a tidy dataset.
+20:Used (as.factor) on mergedDT$SubjectNum and mergedDT$Activity to convert 
+SubjectNum and Activity to factors and confirmed the class and levels of the factors created.
+21.Used the pipe operator on the mergedDT dataset to group the factors created and then
+summarise with respect to the mean.
+21:write.table:export dataframe mergedDTFinal from R to a text/csv format to create a second
+independent tidy dataset with the average of each variable for each activity and each subject.
+
+#Bottlenecks
+Initially I had a few challenges loading the file into R since this was the first time I
+am dealing with two zipped files in a single folder that need to be unzipped and then loaded.
+I did a few readings here and there and I was able to go around it.
+Thanks to my master - Google.
+
+#Contributors
+FirstName: David
+MiddleName: Asare
+LastName: Kumi
+Email: krimeirie@gmail.com
+
+
+
